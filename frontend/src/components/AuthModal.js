@@ -20,7 +20,7 @@ export default function AuthModal({ open, onClose, onSignup, onLogin }) {
     setError('');
     
     try {
-      const res = await fetch('http://localhost:5002/api/auth/signup', {
+      const res = await fetch('https://website-quickbite-app.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function AuthModal({ open, onClose, onSignup, onLogin }) {
       
       if (res.ok) {
         // After successful signup, automatically log in
-        const loginRes = await fetch('http://localhost:5002/api/auth/login', {
+        const loginRes = await fetch('https://website-quickbite-app.onrender.com/api/auth/login', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ export default function AuthModal({ open, onClose, onSignup, onLogin }) {
     setError('');
     
     try {
-      const res = await fetch('http://localhost:5002/api/auth/login', {
+      const res = await fetch('https://website-quickbite-app.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -165,3 +165,4 @@ export default function AuthModal({ open, onClose, onSignup, onLogin }) {
     </div>
   );
 }
+
