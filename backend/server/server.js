@@ -17,7 +17,10 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',               // local dev
+    'https://website-quick-bite-xorh.vercel.app'     // deployed frontend 
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Accept', 'Authorization']
@@ -33,8 +36,6 @@ app.get('/', (req, res) => res.send('API Running'));
 app.use('/api/auth', authRoutes);
 app.use('/api/orders', orderRoutes);
 
-
-
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -44,7 +45,9 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
-  console.log('CORS enabled for http://localhost:3000');
+  console.log('CORS enabled for localhost and Vercel frontend');
 });
 
 console.log('Server is running!');
+
+
