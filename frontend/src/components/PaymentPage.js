@@ -65,7 +65,7 @@ export default function PaymentPage({ total = 0, deliveryFee = 10, onClose, onOr
         throw new Error('Please login to place an order');
       }
 
-      const response = await fetch('http://localhost:5002/api/orders', {
+      const response = await fetch('https://website-quickbite-app.onrender.com/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -366,4 +366,5 @@ export default function PaymentPage({ total = 0, deliveryFee = 10, onClose, onOr
       </div>
     </div>
   );
+
 } 
