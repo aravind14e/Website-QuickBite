@@ -23,7 +23,7 @@ const MyOrders = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5002/api/orders', {
+      const response = await axios.get('https://website-quickbite-app.onrender.com/api/orders', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -41,7 +41,7 @@ const MyOrders = () => {
   const handleCancelOrder = async (orderId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`http://localhost:5002/api/orders/${orderId}/cancel`, {}, {
+      await axios.post(`https://website-quickbite-app.onrender.com/api/orders/${orderId}/cancel`, {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -134,3 +134,4 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
+
